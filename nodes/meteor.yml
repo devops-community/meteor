@@ -23,7 +23,8 @@ configuration:
     # Define your MySQL users
     users:
       - name: meteor
-        databases: "{{ database_name }}"
+        databases: 
+          - "{{ database_name }}"
 
   nginx:
     vhosts:
