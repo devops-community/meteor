@@ -1,0 +1,23 @@
+name: Meteor
+description: A simple boilerplate setup that builds Meteor based apps
+vars:
+  provider.name:
+    label: Cloud provider
+    default: digitalocean
+    description: The id of the provider you want to use, see http://docs.devo.ps/manual/nodes/#format
+  provider.size:
+    label: Server size
+    default: 66
+    description: Size of the server you will deploy your app on, see http://docs.devo.ps/providers/digitalocean/
+  app_name:
+    label: Application name
+    default: telescope
+    description: Name of your Meteor Application
+  git_url:
+    label: App Git URL
+    default: https://github.com/TelescopeJS/Telescope.git
+    description: The Git URL of the app you want to deploy
+  database_name:
+    label: Database name
+    default: telescope
+    description: Name of the database used to store the data of your Meteor app

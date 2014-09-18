@@ -1,0 +1,37 @@
+# Find out more about nodes: http://docs.devo.ps/manual/nodes
+
+id: meteor
+name: Meteor node
+type: server
+
+# Define the provider details - both location and image are optional
+# Refer to the documentation to know more about the defaults
+provider:
+  name: "{{ provider.name }}"
+  size: "{{ provider.size }}"
+  # location:
+  # image: 
+
+services:
+  nginx: '*'
+  mongodb: '*'
+  nodejs: '*'
+  meteor: '*'
+
+configuration:
+  mongodb:
+    # Define your MySQL users
+    users:
+      - name: meteor
+        databases: "{{ database_name }}"
+
+  nginx:
+    vhosts:
+      - id: "{{ app_name }}"
+        routes:
+          - uri: '/'
+            type: proxy
+            to: http://localhost:3000
+          - uri: '/sockjs'
+            type: websocket
+            to: http://localhost:3000
