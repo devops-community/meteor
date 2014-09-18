@@ -9,6 +9,10 @@ vars:
     label: Server size
     default: 66
     description: Size of the server you will deploy your app on, see http://docs.devo.ps/providers/digitalocean/
+  domain:
+    label: Domain name
+    default: example.com
+    description: Domain name for your Meteor Application
   app_name:
     label: Application name
     default: telescope

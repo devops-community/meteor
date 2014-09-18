@@ -29,6 +29,7 @@ configuration:
   nginx:
     vhosts:
       - id: "{{ app_name }}"
+        domain: "{{ domain }}"
         routes:
           - uri: '/'
             type: proxy

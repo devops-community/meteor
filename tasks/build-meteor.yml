@@ -5,7 +5,7 @@ name: Build Meteor app
 type: task
 
 vars:
-  app_src: /tmp/meteor_app_src
+  app_src: meteor_app_src
 
 targets:
   - meteor
@@ -15,19 +15,17 @@ steps:
   - run: devops git update
     options:
       repo: "{{ git_url }}"
-      dest: "{{ app_src }}"
-
-  # Let's build the bundle out of the meteor app
-  - run: cd {{ app_src }} && meteor build bundle_app.tgz
+      dest: /tmp/{{ app_src }}
 
   # Let's prepare the build destination
   - run: >
       sudo mkdir -p /opt/{{ app_name }} && 
       sudo chown -R devops. /opt/{{ app_name }}
-  
-  # Let's deploy the build
+
+  # Let's build the meteor app and deploy to its final location
   - run: >
-      tar xzf {{ app_src }}/bundle_app.tgz -C /opt/{{ app_name }} &&
+      cd /tmp/{{ app_src }} && 
+      meteor build /opt/{{ app_name }} --directory &&
       cd /opt/{{ app_name }}/bundle/programs/server &&
       npm install
   
@@ -41,4 +39,5 @@ steps:
       user: devops
       extra_env: >
         "PORT=3000
-        MONGO_URL=mongodb://meteor:{{ nodes.meteor.configuration.mongodb.users.meteor.password }}@localhost:27017/{{ database_name }}"
+        MONGO_URL=mongodb://meteor:{{ nodes.meteor.configuration.mongodb.users.meteor.password }}@localhost:27017/{{ database_name }}
+        ROOT_URL=http://{{ domain }}"
