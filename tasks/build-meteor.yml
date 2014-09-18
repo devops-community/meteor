@@ -1,7 +1,7 @@
 # Find out more about tasks: http://docs.devo.ps/manual/tasks
 
 id: build-meteor
-name: Build meteor
+name: Build Meteor app
 type: task
 
 vars:

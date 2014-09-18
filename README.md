@@ -1,28 +1,26 @@
-# Builder for gh-pages
+# Builder for Meteor based apps
 
-Build and deploy a simple setup to build your static site and push the build back to GitHub pages on [devo.ps](http://devo.ps).
+Build and deploy [Meteor](http://docs.meteor.com/) based apps.
 
 ## Install
 
 Simply use the link below:
 
-[![Fork on devo.ps](https://app.devo.ps/assets/images/fork.png)](https://app.devo.ps/#/fork?git_url=https://github.com/devops-community/gh-pages)
+[![Fork on devo.ps](https://app.devo.ps/assets/images/fork.png)](https://app.devo.ps/#/fork?git_url=https://github.com/devops-community/meteor)
 
-Once you've forked the repository, open it in devo.ps and you will be prompted for a few settings, including the Git URL for the code of your application.
+Once you've forked the repository, open it in devo.ps and you will be prompted for a few settings, including the Git URL for the code of your application, the names of your application and database.
 
-To deploy your app, you will need to navigate to the tasks page of the repo and run the task manually (click on "play" icon, right of the "Build Laravel app" task).
+To deploy your app, you will need to navigate to the tasks page of the repo and run the task manually (click on "play" icon, right of the "Build Meteor app" task).
 
 ## What's in the box?
 
-This setup contains one server (`nodes/build-server.yml`) with **Node.js** (with [Bower]() and [Gulp]())
+This setup contains one server (`nodes/meteor.yml`) with **Node.js**, **Meteor**, **MongoDB** and **Nginx**
 
-We have included as well a task (`tasks/gh-pages-build.yml`) that will be executed when GitHub sends a webhook:
-
-1. Clone your to-be-compiled site from GitHub.
-1. Execute your `make build` to generate the site
-1. Commit and push the built version over to the `gh-pages` 
+We have included as well a task (`tasks/meteor-build.yml`) that can be executed and will deploy your Meteor app.
 
 The current repo provides a very simple setup. Hack at will!
+
+Feel free to extend the task and add the support for webhooks to install any kind of Meteor app! Checkout the [gh-pages builder](https://github.com/devops-community/gh-pages) for some examples.
 
 ## Questions?
 
