@@ -6,7 +6,7 @@ Build and deploy [Meteor](http://docs.meteor.com/) based apps.
 
 Simply use the link below:
 
-[![Fork on devo.ps](https://app.devo.ps/assets/images/fork.png)](https://app.devo.ps/#/fork?git_url=https://github.com/devops-community/meteor)
+[![Fork on devo.ps](https://app.devo.ps/assets/images/fork.png)](https://app.devo.ps/#/fork?git_url=https://github.com/devops-community/meteor.git)
 
 Once you've forked the repository, open it in devo.ps and you will be prompted for a few settings, including the Git URL for the code of your application, the names of your application and database.
 
