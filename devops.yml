@@ -1,6 +1,6 @@
 name: Meteor
 description: A simple boilerplate setup that builds Meteor based apps
-image: https://raw.githubusercontent.com/devo-ps/meteor/master/logo.png
+image: https://raw.githubusercontent.com/devops-community/meteor/master/logo.png
 vars:
   provider.name:
     label: Cloud provider
