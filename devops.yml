@@ -1,5 +1,5 @@
 name: Meteor
-description: A simple boilerplate setup that builds Meteor based apps
+description: A boilerplate setup to deploy your Meteor app (Nginx, MongoDB, Node.js and Meteor).
 image: https://raw.githubusercontent.com/devops-community/meteor/master/logo.png
 vars:
   provider.name:
