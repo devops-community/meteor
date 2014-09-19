@@ -1,4 +1,4 @@
-# Builder for Meteor based apps
+# Meteor stack
 
 Build and deploy [Meteor](http://docs.meteor.com/) based apps.
 
