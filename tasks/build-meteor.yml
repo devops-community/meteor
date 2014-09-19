@@ -9,6 +9,11 @@ vars:
 
 targets:
   - meteor
+  
+# Uncomment the following to add a deploy webhook; you may want to obfuscate the URL as this is public
+#triggers:
+#  webhooks:
+#    - path: deploy
 
 steps:
   # Fetch/update the code from the git repo
