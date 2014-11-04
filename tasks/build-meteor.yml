@@ -11,9 +11,11 @@ targets:
   - meteor
   
 # Uncomment the following to add a deploy webhook; you may want to obfuscate the URL as this is public
-#triggers:
+triggers:
 #  webhooks:
 #    - path: deploy
+  events:
+    - node.meteor.create.success
 
 steps:
   # Fetch/update the code from the git repo
