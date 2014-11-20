@@ -13,12 +13,20 @@ provider:
   # image: 
 
 services:
+  backup: '*'
   nginx: '*'
   mongodb: '*'
   nodejs: '*'
   meteor: '*'
 
 configuration:
+  # backup:
+  #   # Define local cron to run the backup
+  #   schedules:
+  #     - '0 3 * * *'
+  #   # And save the archive in a "daily" folder
+  #   path: '/opt/backup/%Y/%m/%d/daily'
+
   mongodb:
     # Define your MySQL users
     users:

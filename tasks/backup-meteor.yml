@@ -1,0 +1,27 @@
+# Find out more about tasks: http://docs.devo.ps/manual/tasks
+
+id: backup-meteor
+name: Backup Laravel
+type: task
+
+targets:
+  - meteor
+
+triggers:
+  crons:
+    # At 4am every day
+    - '0 4 * * *'
+  webhooks: 
+    - path: backup/meteor
+
+steps:
+  # Backup the MongoDB meteor database and workdir
+  - run: devops backup run
+    options:
+      path: '/opt/backup/%Y/%m/%d/%H-%M/meteor'
+      files:
+        - '/opt/{{ app_name }}'
+      mongodb_dbs:
+        - '{{ database_name }}'
+
+  # All the backups are available in /opt/backup/YYYY/MM/DD/HH-MM/meteor
