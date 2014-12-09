@@ -45,6 +45,6 @@ steps:
       node_env: prod
       user: devops
       extra_env: >
-        "PORT=3000
+        PORT=3000
         MONGO_URL=mongodb://meteor:{{ nodes.meteor.configuration.mongodb.users.meteor.password }}@localhost:27017/{{ database_name }}
-        ROOT_URL=http://{{ domain }}"
+        ROOT_URL=http://{{ domain }}
